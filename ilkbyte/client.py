@@ -22,19 +22,19 @@ class Ilkbyte(object):
         if not host:
             host = os.getenv('ILKBYTE_HOST')
             if not host:
-                logger.error(f"hostname variable or ILKBYTE_HOST environment variable is required!")
+                logger.error("hostname variable or ILKBYTE_HOST environment variable is required!")
                 raise ConfigurationError()
 
         if not secret_key:
             secret_key = os.getenv('ILKBYTE_SECRET_KEY')
             if not secret_key:
-                logger.error(f"secret_key variable or ILKBYTE_SECRET_KEY environment variable is required!")
+                logger.error("secret_key variable or ILKBYTE_SECRET_KEY environment variable is required!")
                 raise ConfigurationError()
 
         if not access_key:
             access_key = os.getenv('ILKBYTE_ACCESS_KEY')
             if not access_key:
-                logger.error(f"access_key variable or ILKBYTE_ACCESS_KEY environment variable is required!")
+                logger.error("access_key variable or ILKBYTE_ACCESS_KEY environment variable is required!")
                 raise ConfigurationError()
 
         self._session = IlkbyteAPISession(host, secret_key, access_key)
@@ -135,12 +135,12 @@ class Ilkbyte(object):
         })
 
     def get_domains(self, p: int = 1):
-        return self._session.get_resource(f"domain/list", params={
+        return self._session.get_resource("domain/list", params={
             'p': p
         })
 
     def create_domain(self, domain: str, server: str, ipv6: bool):
-        return self._session.get_resource(f"domain/create", params={
+        return self._session.get_resource("domain/create", params={
             'domain': domain,
             'server': server,
             'ipv6': ipv6
@@ -172,4 +172,3 @@ class Ilkbyte(object):
 
     def dns_push(self, domain_name: str):
         return self._session.get_resource(f"domain/manage/{domain_name}/push")
-
