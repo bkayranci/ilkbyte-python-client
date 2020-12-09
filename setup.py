@@ -7,8 +7,8 @@ with open('requirements.txt') as f:
     requirements = f.read().splitlines()
 
 setuptools.setup(
-    name="ilkbyte", # Replace with your own username
-    version="1.0.0",
+    name="ilkbyte",
+    version="1.0.1",
     author="Türkalp Burak Kayrancıoğlu",
     author_email="bkayranci@gmail.com",
     description="Ilkbyte python client",
