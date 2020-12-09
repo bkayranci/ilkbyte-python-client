@@ -8,7 +8,7 @@ with open('requirements.txt') as f:
 
 setuptools.setup(
     name="ilkbyte",
-    version="1.0.1",
+    version="1.0.2",
     author="Türkalp Burak Kayrancıoğlu",
     author_email="bkayranci@gmail.com",
     description="Ilkbyte python client",
